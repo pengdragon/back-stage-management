@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    tbody .tr:nth-child(2n){
+        background:orange;
+    }
+    tbody .tr:nth-child(2n+1){
+        background:blueviolet;
+    }
+    .return,.add{
+        height: 50px;
+        width:100px;
+        border-radius: 10px;
+        background: green;
+        color:aliceblue;
+        font-size: 25px;
+        line-height: 50px;
+        float:left;
+        margin-left:570px;
+    }
+    .add{
+        background:orange;
+        margin-left:200px;
+    }
+    .table{
+        position: absolute;
+        top:120px;
+        left:50%;
+        margin-left:-200px;
+    }
+    body{
+        background: greenyellow;
+    }
+    </style>
+</head>
+<body>
+</body>
+<script src="../js/jquery.js"></script>
+<script>
+
+    $.get('../../server/php/selecte.php',function(res){
+        $('body').html(res);
+        $(".delete").css('background','blue');
+        $('.return').click(function(){
+            location.href='show.html';
+        })
+        $('.add').click(function(){
+            location.href="add.html";
+        })
+        $(".delete").click(function(){
+            let $title = this.parentNode.children[1].firstElementChild.firstElementChild.innerHTML;
+            $.ajax('../../server/php/delete.php',{
+                type:'POST',
+                contentType:'application/json',
+                data:JSON.stringify({
+                    title:$title
+                }),
+                success:function(res){
+                    console.log(res)
+                },
+                error(res){
+                    console.log('失败了')
+                },
+                complete(res){
+                    console.log('完成了')
+                }
+            })
+            console.log($title)
+            this.parentNode.remove();
+
+        })
+    });
+</script>
+</html>

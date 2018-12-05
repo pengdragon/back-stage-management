@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册商品信息</title>
+    <style>
+    *{padding:0;margin:0}
+    body{
+        background: rgb(96, 142, 198);
+    }
+    .widget-main{
+        margin:0 auto;
+        height:400px;
+        width:500px;
+        background:rgba(204, 204, 204, 0.816);
+        position: relative;
+        top:150px;
+    }
+    input{
+        height: 30px;
+        width:300px;
+        margin-bottom:20px;
+        outline: none;
+        border:2px solid rgba(23, 96, 223, 0.51);
+    }
+    label{
+        color:rgb(25, 213, 38);
+        font-size: 20px;
+    }
+    .form-vertical{
+        width:200px;
+        margin-left:100px;
+        margin-top:20px;
+    }
+    .login{
+        outline: none;
+        text-align: center;
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        background: red;
+        border:none;
+        color:wheat;
+    }
+    </style>
+</head>
+<body>
+    <div class="widget-main">
+    <h4 class="header blue lighter bigger" style=" text-align:center; font-size: 27px;">
+        <font style="vertical-align: inherit;color: rgb(96, 142, 198);">
+    请输入商品信息
+    </font></h4>
+    <form class="form-vertical" name="form" method="POST" action="../../server/php/add.php" >
+                <p> <label for="">商品名称</label><input type="text" class="title" name="title" autocomplete="off" ></p>
+                <p> <label for="">商品价格</label><input type="text" class="price" name="price" ></p>
+                <p> <label for="">商品数量</label><input type="text" class="count"  name="count" ></p>
+                <button type="submit" class="login">提交</button>
+               
+    </form>
+</div>
+    <script></script>
+    <script>
+    //login();
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理</title>
+    <style>
+    *{padding:0;margin:0}
+    body{
+        background: rgb(96, 142, 198);
+    }
+    .widget-main{
+        margin:0 auto;
+        height: 200px;
+        width:300px;
+        background:rgba(204, 204, 204, 0.816);
+        position: relative;
+        top:150px;
+    }
+    input{
+        height: 30px;
+        width:200px;
+        margin-bottom:20px;
+        outline: none;
+        border:2px solid rgba(204, 204, 204, 0.51);
+    }
+    .form-vertical{
+        width:200px;
+        margin-left:50px;
+        margin-top:20px;
+    }
+    .login{
+        outline: none;
+        text-align: center;
+        width: 200px;
+        font-size: 20px;
+        line-height: 20px;
+        background: rgb(70, 153, 225);
+        border:none;
+    }
+    </style>
+</head>
+<body>
+    <div class="widget-main">
+    <h4 class="header blue lighter bigger" style=" text-align:center; font-size: 27px;">
+        <font style="vertical-align: inherit;color: rgb(96, 142, 198);">
+    小彭后台系统
+    </font></h4>
+    <form class="form-vertical login-form" name="form" method="POST" action="page/show.html" >
+                <p><input type="text" class="form-control" placeholder="用户名" name="username" autocomplete="off" ></p>
+                <p><input type="password" class="form-control" placeholder="密码" name="PassWord" ></p>
+                <button type="submit" class="login">登录</button>
+    </form>
+</div>
+    <script src="js/index.js"></script>
+    <script>
+    login();
+    </script>
+</body>
+</html>
